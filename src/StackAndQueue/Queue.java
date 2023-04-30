@@ -3,18 +3,38 @@ package StackAndQueue;
 import java.util.LinkedList;
 
 public class Queue {
-    public static void main(String[] args) {
+    LinkedList<Integer> queue;
 
+    public Queue() {
+        queue = new LinkedList<Integer>();
+    }
 
-    // Create an empty LinkedList
-    LinkedList<Integer> queue = new LinkedList<>();
+    // Enqueue operation (append)
+    public void enqueue(int value) {
+        queue.add(value);
+    }
 
-    // Enqueue elements 56, 30, and 70
-        queue.add(56);
-        queue.add(30);
-        queue.add(70);
+    // Dequeue operation (remove from the beginning)
+    public int dequeue() {
+        if (queue.isEmpty()) {
+            System.out.println("Queue is empty!");
+            return -1;
+        } else {
+            return queue.removeFirst();
+        }
+    }
 
-    // Print the queue
-        System.out.println("Queue: " + queue);
-}
+    // Display the queue
+    public void display() {
+        if (queue.isEmpty()) {
+            System.out.println("Queue is empty!");
+        } else {
+            System.out.print("Queue: ");
+            for (int value : queue) {
+                System.out.print(value + " ");
+            }
+            System.out.println();
+        }
+    }
+
 }
