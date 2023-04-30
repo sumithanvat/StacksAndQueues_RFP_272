@@ -10,6 +10,13 @@ public class Main {
         myStack.push(70);
         myStack.push(30);
         myStack.push(56);
-          myStack.display();
+        System.out.println("Stack elements:");
+        myStack.display();
+
+        // Pop elements from the stack until it is empty
+        System.out.println("Popping elements from the stack:");
+        while (!myStack.isEmpty()) {
+            System.out.println(myStack.pop());
+        }
     }
 }
